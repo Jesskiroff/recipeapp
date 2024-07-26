@@ -13,10 +13,11 @@ function Popular() {
   //Therefore, it should only run once after the initial render and not on any subsequent renders.
   const getPopular = async () => {
     const api = await fetch(
-      `https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}&number=9`
+      `https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}&number=15`
     );
     const data = await api.json();
     setPopular(data.recipes);
+    console.log(data.recipes);
   };
 
   return (
@@ -29,6 +30,7 @@ function Popular() {
               return (
                 <Card>
                   <p>{recipe.title}</p>
+                  <img src={recipe.image} alt=""></img>
                 </Card>
               );
             })}
@@ -43,7 +45,10 @@ const Wrapper = styled.div`
 `;
 
 const Card = styled.div`
-    min-height: 25rem
-    border-radius: 22rem
+    min-height: 25rem;
+    border-radius: 22rem;
+    
     `;
+
+
 export default Popular;
