@@ -1,6 +1,9 @@
 import { useEffect, useState } from 'react';
 import styled from 'styled-components';
+import { Splide, SplideSlide } from '@splidejs/react-splide';
+import '@splidejs/react-splide/css';
 
+import
 //use state  is essetially like a var that holds info but its advantage is that it reacts to th ui
 
 function Popular() {
@@ -26,14 +29,16 @@ function Popular() {
         return (
           <Wrapper>
             <h3>Popular Picks</h3>
+            <Splide>
             {popular.map((recipe) => {
               return (
                 <Card>
                   <p>{recipe.title}</p>
-                  <img src={recipe.image} alt=""></img>
+                  <img src={recipe.image} alt={recipe.title}></img>
                 </Card>
               );
             })}
+            </Splide>
           </Wrapper>
         );
       })}
