@@ -61,29 +61,40 @@ const Card = styled.div`
     position: relative;
 
 
-    img{
+  img{
     border-radius: 2rem
     position: absolute;
     left:0;
     width:100%
     height: 100%
     object:fit: cover;
-    }
+  }
 
-    p{
+  p{
     position: absolute,
     z-index:10;
     left:50%;
     bottom:0%;
     transform:translate(-50, 0%);
-    background-color:black;
-    color: white;
+    color: black;
     width:100%
     text-align:center;
-    }
+    font-weight: 600;
+    font-size:1rem;
+    height:40%
+    display: flex;
+    justify-content:center;
+    align-items: center;
+  }
 
     `;
 
+const Gradent = styled.div`
+z-index: 3;
+position: absolute;
+width:100%;
+height:100%;
 
+`;
 
 export default Popular;
